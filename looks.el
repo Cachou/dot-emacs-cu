@@ -5,7 +5,7 @@
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 ;; Font setting
-(setq prefered-font "WenQuanYi Micro Hei Mono-13")
+(setq prefered-font "Monospace-13")
 
 (if (font-info prefered-font)
     (set-frame-font prefered-font)
@@ -57,9 +57,13 @@
 
 ;;;; MISC.
 
+(defalias 'yes-or-no-p 'y-or-n-p)
+
 (setq visible-bell nil)
 
 (setq inhibit-startup-message t)
+
+(setq initial-scratch-message nil)
 
 (setq scroll-margin 3
       scroll-conservatively 10000)

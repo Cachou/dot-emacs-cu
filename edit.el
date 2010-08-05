@@ -1,3 +1,9 @@
+(global-set-key (kbd "C-x C-j") 'ffap)
+
+(global-set-key (kbd "<f4>") '(lambda ()
+				(interactive)
+				(kill-buffer (current-buffer))))
+
 (setq mouse-yank-at-point t)
 
 (setq kill-ring-max 200)

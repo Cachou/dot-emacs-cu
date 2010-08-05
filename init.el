@@ -20,20 +20,14 @@
 ;; load edit
 (load "edit")
 
+
 ;; ido mode
 (require 'ido)
 (ido-mode t)
 
 ;; org-mode
-(add-to-list 'load-path (concat dotfiles-dir "org-7.01g/lisp"))
-(add-to-list 'load-path (concat dotfiles-dir "org-7.01g/contrib/lisp"))
-(require 'org-install)
-(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
-(add-hook 'org-mode-hook 'turn-on-font-lock)
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
-(setq org-agenda-files '("~/test/elisp"))
+
+(load "org")
 
 
 ;; paredit-mode
@@ -66,3 +60,4 @@
     (load
      (expand-file-name "~/.emacs.d/elpa/package.el"))
   (package-initialize))
+
