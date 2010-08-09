@@ -3,6 +3,10 @@
 (setq user-full-name "Tang Tong")
 (setq user-mail-address "tangtong123@gmail.com")
 
+(global-set-key (kbd "<f2>") (lambda ()
+			       (interactive)
+			       (find-file "~/.emacs.d/init.el")))
+
 ;; Load path etc.
 
 (setq dotfiles-dir (file-name-directory
@@ -29,6 +33,9 @@
 
 (load "org")
 
+;; emms
+(load "emms")
+
 
 ;; paredit-mode
 (mapc (lambda (hook)
@@ -41,8 +48,10 @@
 (semantic-load-enable-code-helpers)
 (semantic-load-enable-semantic-debugging-helpers)
 
-(global-set-key (kbd "<M-right>") 'semantic-ia-fast-jump)
-(global-set-key (kbd "<M-left>") 'semantic-mrub-switch-tags)
+(global-set-key (kbd "C-.") 'semantic-ia-fast-jump)
+(global-set-key (kbd "C-,") 'semantic-mrub-switch-tags)
+
+
 
 
 
@@ -60,4 +69,5 @@
     (load
      (expand-file-name "~/.emacs.d/elpa/package.el"))
   (package-initialize))
+
 

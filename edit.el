@@ -4,6 +4,10 @@
 				(interactive)
 				(kill-buffer (current-buffer))))
 
+(global-set-key (kbd "<f9>") (lambda ()
+				  (interactive)
+				  (find-file "~/Notes/notes.org")))
+
 (setq mouse-yank-at-point t)
 
 (setq kill-ring-max 200)
@@ -34,3 +38,15 @@
 	try-expand-line 
 	try-complete-lisp-symbol-partially 
 	try-complete-lisp-symbol))
+
+;; backups
+(setq backup-directory-alist '(("." . "~/.emacs-file-backups")))
+(setq make-backup-files t)
+(setq kept-old-versions 5)
+(setq kept-new-versions 10)
+(setq delete-old-versions t)
+(setq backup-by-copying t)
+(setq version-control t)
+
+;; clipboard enable
+(setq x-select-enable-clipboard t)

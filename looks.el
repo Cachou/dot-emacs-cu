@@ -5,7 +5,7 @@
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 ;; Font setting
-(setq prefered-font "Monospace-13")
+(setq prefered-font "Monospace-14")
 
 (if (font-info prefered-font)
     (set-frame-font prefered-font)
@@ -66,12 +66,12 @@
 (setq initial-scratch-message nil)
 
 (setq scroll-margin 3
-      scroll-conservatively 10000)
+      scroll-conservatively 100000)
 
 (show-paren-mode t)
 (setq show-paren-style 'parentheses)
 
-(mouse-avoidance-mode 'animate)
+(mouse-avoidance-mode 'banish)
 
 (setq frame-title-format "emacs@%b")
 
@@ -92,3 +92,9 @@
 ;;; Frame Size
 (add-to-list 'default-frame-alist '(height . 24))
 (add-to-list 'default-frame-alist '(width . 80))
+
+;; linum
+(global-linum-mode 1)
+
+;; fringe-mode
+(set-fringe-mode 'minimal)
