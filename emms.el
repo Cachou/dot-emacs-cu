@@ -2,17 +2,18 @@
 
 (require 'emms-setup)
 (emms-standard)
-(emms-default-players)
-
+(setq emms-player-list '(emms-player-mplayer))
+(setq emms-seek-seconds 8)
 
 
 (global-set-key (kbd "M-=") (lambda ()
 			      (interactive)
-			      (emms-seek 15)))
+			      (emms-seek-forward)))
 (global-set-key (kbd "M--") (lambda ()
 			      (interactive)
-			      (emms-seek -15)))
+			      (emms-seek-backward)))
 (global-set-key (kbd "M-p") 'emms-pause)
+(global-set-key (kbd "C-M-s") 'emms-stop)
 
 (global-set-key (kbd "<f12>") 'emms)
 

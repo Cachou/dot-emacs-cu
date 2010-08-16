@@ -37,6 +37,11 @@
 (load "emms")
 
 
+;; browser function
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "google-chrome")
+
+
 ;; paredit-mode
 (mapc (lambda (hook)
 	(add-hook hook 'paredit-mode))
@@ -50,6 +55,7 @@
 
 (global-set-key (kbd "C-.") 'semantic-ia-fast-jump)
 (global-set-key (kbd "C-,") 'semantic-mrub-switch-tags)
+(global-set-key (kbd "C-\\") 'senator-fold-tag-toggle)
 
 
 

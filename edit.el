@@ -4,9 +4,10 @@
 				(interactive)
 				(kill-buffer (current-buffer))))
 
-(global-set-key (kbd "<f9>") (lambda ()
-				  (interactive)
-				  (find-file "~/Notes/notes.org")))
+(global-set-key (kbd "<f5>") (lambda ()
+			       (interactive)
+			       (switch-to-buffer "*scratch*")))
+
 
 (setq mouse-yank-at-point t)
 
@@ -50,3 +51,15 @@
 
 ;; clipboard enable
 (setq x-select-enable-clipboard t)
+
+;; text-mode
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+
+;; spell check
+
+
+
+;; change mode
+(global-set-key (kbd "M-m") (make-sparse-keymap "change mode"))
+(global-set-key (kbd "M-m t") 'text-mode)
+(global-set-key (kbd "M-m e") 'emacs-lisp-mode)

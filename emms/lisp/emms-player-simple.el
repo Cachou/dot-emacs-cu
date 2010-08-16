@@ -106,6 +106,9 @@ to call the player and ARGS are the command line arguements."
 (defvar emms-player-simple-process-name "emms-player-simple-process"
   "The name of the simple player process")
 
+;; (defvar emms-player-simple-process-buffer-name "emms-player-simple-process-buffer"
+;;   "The name of the simple-player process buffer")
+
 (defun emms-player-simple-stop ()
   "Stop the currently playing process, if indeed there is one"
   (let ((process (get-process emms-player-simple-process-name)))
@@ -120,7 +123,7 @@ the specified PARAMS.
 PLAYER is the name of the current player."
   (let ((process (apply 'start-process
                         emms-player-simple-process-name
-                        nil
+			nil
                         cmdname
                         ;; splice in params here
                         (append params (list filename)))))

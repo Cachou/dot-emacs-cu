@@ -15,13 +15,23 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 (global-set-key "\C-cc" 'org-capture)
 
+(global-set-key (kbd "<f9>") (lambda ()
+			       (interactive)
+			       (find-file "~/Notes/notes.org")))
+(global-set-key (kbd "<f10>") (lambda ()
+				(interactive)
+				(find-file "~/Notes/journal.org")))
+
 ;; agenda
 (setq org-agenda-files `(,org-default-notes-file))
 
 ;; capture
 (setq org-capture-templates
-      '(("n" "Notes" entry (file+headline "~/Notes/notes.org" "Notes")
-	 "* %? %^G\n %T")))
+      '(
+	;; ("n" "Notes" entry (file+headline "~/Notes/notes.org" "Notes")
+	;;  "* %? %^G\n %T")
+	("j" "Journal" entry (file+datetree "~/Notes/journal.org")
+	 "* %?\nEntered on %U\n")))
 
 ;; todo 
 
